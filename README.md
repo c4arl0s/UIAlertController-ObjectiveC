@@ -1,3 +1,10 @@
+# steps to create an Alert
+
+1.- create an instance of UIAlertController
+2.- create an alert action
+3.- add this action to the alert created.
+4.- present the viewcontroller alert.
+
 # UIAlertController-ObjectiveC
 UIAlertController-ObjectiveC
 
