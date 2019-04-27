@@ -24,8 +24,7 @@
 @end
 ```
 
-
-```` objective-c
+``` objective-c
 //
 //  AppDelegate.m
 //  AlertViewControllerExample
@@ -79,7 +78,6 @@
 @end
 ```
 
-
 ``` objective-c 
 //
 //  ViewController.h
@@ -97,8 +95,7 @@
 @end
 ```
 
-
-```` objective-c
+``` objective-c
 //
 //  ViewController.m
 //  AlertViewControllerExample
@@ -130,4 +127,3 @@
 }
 @end
 ```
-
