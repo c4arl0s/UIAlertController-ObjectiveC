@@ -125,13 +125,17 @@ UIButton *button;
 
     CGFloat widthButton = 60;
     CGFloat heightButton = 60;
-    CGFloat x = self.view.frame.size.width/2 - widthButton/2;
-    CGFloat y = self.view.frame.size.height/2 - heightButton/2;
+    CGFloat abscissaCenteredButton = self.view.frame.size.width/2 - widthButton/2;
+    CGFloat ordinateCenteredButton = self.view.frame.size.height/2 - heightButton/2;
 
-    CGRect buttonFrame = CGRectMake(x, y, 60, 60);
+    CGRect buttonFrame = CGRectMake(abscissaCenteredButton,
+                                    ordinateCenteredButton,
+                                    widthButton,
+                                    heightButton);
     button = [[UIButton alloc] initWithFrame:buttonFrame];
     [button setTitle:@"button" forState:UIControlStateNormal];
     [button setBackgroundColor:[UIColor blackColor]];
+    // target-action patter explicitly shown.
     [button addTarget:self action:@selector(buttonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
@@ -144,7 +148,9 @@ UIButton *button;
                                                        style:UIAlertActionStyleDefault
                                                      handler:nil];
     [alert addAction:oKButton];
-    [self presentViewController:alert animated:YES completion:nil];
+    [self presentViewController:alert animated:YES completion:^{
+        sleep(2);
+        [self->button setBackgroundColor:[UIColor redColor]];
+    }];
 }
-@end
-```
+@end```
