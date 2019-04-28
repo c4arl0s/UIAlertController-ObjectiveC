@@ -24,8 +24,7 @@
 @end
 ```
 
-
-```` objective-c
+``` objective-c
 //
 //  AppDelegate.m
 //  AlertViewControllerExample
@@ -35,16 +34,22 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+{
+    ViewController *viewController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -79,7 +84,6 @@
 @end
 ```
 
-
 ``` objective-c 
 //
 //  ViewController.h
@@ -97,8 +101,7 @@
 @end
 ```
 
-
-```` objective-c
+``` objective-c
 //
 //  ViewController.m
 //  AlertViewControllerExample
@@ -110,15 +113,30 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *buttonAlert; 
+{
+UIButton *button;
+}
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    CGFloat widthButton = 60;
+    CGFloat heightButton = 60;
+    CGFloat x = self.view.frame.size.width/2 - widthButton/2;
+    CGFloat y = self.view.frame.size.height/2 - heightButton/2;
+
+    CGRect buttonFrame = CGRectMake(x, y, 60, 60);
+    button = [[UIButton alloc] initWithFrame:buttonFrame];
+    [button setTitle:@"button" forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor blackColor]];
+    [button addTarget:self action:@selector(buttonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
 }
-- (IBAction)buttonAlertTapped:(id)sender {
+- (void)buttonTapped
+{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"This is my first alert, be nice"
                                                                    message:@"This is simple alert"
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -130,4 +148,3 @@
 }
 @end
 ```
-
