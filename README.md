@@ -156,5 +156,7 @@ UIButton *button;
 @end
 ```
 
+![Captura de Pantalla 2019-04-28 a la(s) 19 51 31](https://user-images.githubusercontent.com/24994818/56872466-be714680-69e6-11e9-8408-3313c7d3c4c7.png)
+
 ![Captura de Pantalla 2019-04-28 a la(s) 18 50 30](https://user-images.githubusercontent.com/24994818/56871684-5b7bb180-69de-11e9-8585-34e8909a1ec3.png)
 
