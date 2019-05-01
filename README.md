@@ -162,3 +162,33 @@ UIButton *button;
 
 # set a value for an image to the alert
 
+this methods work but I dont know why
+
+``` objective-
+- (void)buttonTapped
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"This is my first alert, be nice"
+                                                                   message:@"This is simple alert"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *oKButton = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alert addAction:oKButton];
+    UIAlertAction *noButton = [UIAlertAction actionWithTitle:@"NO"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alert addAction:noButton];
+    UIAlertAction *siButton = [UIAlertAction actionWithTitle:@"SI"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alert addAction:siButton];
+    [siButton setValue:[[UIImage imageNamed:@"mic.jpg"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forKey:@"image"];
+    [self presentViewController:alert animated:YES completion:^{
+        [self->button setBackgroundColor:[UIColor redColor]];
+    }];
+}
+```
+
+
+
+
