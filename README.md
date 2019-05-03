@@ -164,7 +164,7 @@ UIButton *button;
 
 this methods work but I dont know why
 
-``` objective-
+``` objective-c
 - (void)buttonTapped
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"This is my first alert, be nice"
