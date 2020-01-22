@@ -18,14 +18,31 @@ return YES;
 # 1. create an instance of UIAlertController
 
 ```swift
-UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"This is my first alert, be nice"
+UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"This is my first alert, be nice"
                                                                    message:@"This is a simple alert"
                                                             preferredStyle:UIAlertControllerStyleAlert];
 ```
 
 # 2. create an alert action
 
-iftift```sw
+```swift
+UIAlertAction *okAlertAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+```
+
+# 3. add this action to the alert created.
+
+```swift
+[alertController addAction:okAlertAction];
+```
+
+# 4. present the alert controller
+
+```swift
+[self presentViewController:alertController animated:YES completion:nil];
+```
+
 
 # In ViewController
 
